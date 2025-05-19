@@ -102,22 +102,44 @@ The model illustrates how smart devices, users, and analytics platforms interact
 
 ---
 
-%% Smart Home Energy Optimization - Business Process Model (UML/BPMN Style)
-flowchart TD
-    A[Start: User logs in] --> B[Configure preferences]
-    B --> C[System initializes devices]
-    C --> D[IoT Devices monitor appliance usage]
-    D --> E[Cloud Engine collects data]
-    E --> F[Analyze data for anomalies]
-    
-    F --> G{Anomaly Detected?}
-    G -- Yes --> H[Send optimization commands]
-    H --> I[IoT Devices adjust appliance behavior]
-    I --> J[Notify user via mobile app]
-    J --> K[Generate energy usage reports]
-    K --> L[End]
 
-    G -- No --> M[Continue monitoring]
-    M --> D
+```mermaid
+flowchart LR
+    %% Swimlane-style Smart Home Energy Optimization Process
+
+    subgraph User
+        A1[Login to mobile app]
+        A2[Configure preferences]
+    end
+
+    subgraph SmartHomeSystem
+        B1[Initialize devices]
+        B2[Authenticate user]
+    end
+
+    subgraph IoTDevices
+        C1[Monitor appliance usage]
+        C2[Receive optimization commands]
+        C3[Adjust appliance behavior]
+    end
+
+    subgraph CloudEngine
+        D1[Collect usage data]
+        D2[Analyze for anomalies]
+        D3{Anomaly detected?}
+        D4[Send optimization commands]
+    end
+
+    subgraph Notification
+        E1[Notify user]
+        E2[Generate usage report]
+    end
+
+    %% Flow
+    A1 --> A2 --> B1 --> B2 --> C1 --> D1 --> D2 --> D3
+    D3 -- Yes --> D4 --> C2 --> C3 --> E1 --> E2
+    D3 -- No --> C1
+```
+
     
 

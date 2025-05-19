@@ -140,6 +140,27 @@ flowchart LR
     D3 -- Yes --> D4 --> C2 --> C3 --> E1 --> E2
     D3 -- No --> C1
 ```
+# 📊 Diagram Explanation: Smart Home Energy Optimization
+
+## 🧠 Components & Interactions
+
+- **User**: Initiates the system and sets energy preferences.
+- **System**: Authenticates and sets up connected IoT devices.
+- **IoT Devices**: Continuously track energy use in real time.
+- **Cloud Engine**: Collects and analyzes data to optimize usage.
+
+## 🔍 Decision Logic
+
+- When the system detects abnormal usage (peak hour, waste, etc.), it issues commands to optimize appliance behavior.
+- If everything is normal, it just keeps monitoring.
+
+## 📈 MIS Support
+
+- **Informed Decisions**: Energy reports allow users to understand their habits.
+- **Automation**: Devices respond without user intervention.
+- **Data Flow**: From user input → IoT monitoring → cloud analytics → action.
+
+
 
     
 
